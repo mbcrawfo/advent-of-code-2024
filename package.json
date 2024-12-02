@@ -1,19 +1,37 @@
 {
-  "name": "advent-of-code-2024",
-  "version": "1.0.0",
-  "description": "Advent of Code 2024 in Typescript",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mbcrawfo/advent-of-code-2024.git"
-  },
-  "author": "Michael Crawford <mbcrawfo@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mbcrawfo/advent-of-code-2024/issues"
-  },
-  "homepage": "https://github.com/mbcrawfo/advent-of-code-2024#readme"
+    "name": "advent-of-code-2024",
+    "version": "1.0.0",
+    "description": "Advent of Code 2024 in Typescript",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint . --max-warnings 0",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier:check": "prettier . --check",
+        "prettier:fix": "prettier . --write --list-different",
+        "start": "ts-node",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mbcrawfo/advent-of-code-2024.git"
+    },
+    "author": "Michael Crawford <mbcrawfo@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mbcrawfo/advent-of-code-2024/issues"
+    },
+    "homepage": "https://github.com/mbcrawfo/advent-of-code-2024#readme",
+    "devDependencies": {
+        "@eslint/js": "9.16.0",
+        "@ianvs/prettier-plugin-sort-imports": "4.4.0",
+        "@types/node": "22.10.1",
+        "eslint": "9.16.0",
+        "eslint-config-prettier": "9.1.0",
+        "globals": "15.13.0",
+        "prettier": "3.4.1",
+        "ts-node": "10.9.2",
+        "tslib": "2.8.1",
+        "typescript": "5.7.2",
+        "typescript-eslint": "8.16.0"
+    }
 }
