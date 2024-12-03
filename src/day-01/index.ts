@@ -1,22 +1,21 @@
-import path from "node:path";
+import { getCommandLine } from "../utilities/getCommandLine";
 import { readLines } from "../utilities/readLines";
-import { reconcileLocationIds } from "./reconcileLocationIds";
+import { reconcileLocationIdLists as humanImpl } from "./human";
 
-const lines = await readLines(path.resolve(__dirname, "input.txt"));
-console.log(`Read ${lines.length} lines`);
+const { implementation, inputFilePath } = getCommandLine(__dirname);
 
-const left: number[] = [];
-const right: number[] = [];
-
-for (const line of lines) {
-    const [leftValue, rightValue] = line
-        .split(" ")
-        .map((value) => parseInt(value.trim(), 10))
-        .filter((value) => !Number.isNaN(value));
-
-    left.push(leftValue);
-    right.push(rightValue);
+let reconcileLocationIdLists = humanImpl;
+switch (implementation) {
+    case "chatgpt":
+        break;
+    case "claude":
+        break;
+    case "copilot":
+        break;
+    default:
+    // Intentionally empty.
 }
 
-const difference = reconcileLocationIds(left, right);
-console.log(`The total difference is ${difference}`);
+const lines = await readLines(inputFilePath);
+const difference = reconcileLocationIdLists(lines);
+console.log(difference);
