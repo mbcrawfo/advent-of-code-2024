@@ -1,21 +1,7 @@
-import { getCommandLine } from "../utilities/getCommandLine";
+import path from "node:path";
 import { readLines } from "../utilities/readLines";
-import { reconcileLocationIdLists as humanImpl } from "./human";
+import { reconcileLocationIdLists } from "./reconcileLocationIdLists";
 
-const { implementation, inputFilePath } = getCommandLine(__dirname);
-
-let reconcileLocationIdLists = humanImpl;
-switch (implementation) {
-    case "chatgpt":
-        break;
-    case "claude":
-        break;
-    case "copilot":
-        break;
-    default:
-    // Intentionally empty.
-}
-
-const lines = await readLines(inputFilePath);
+const lines = await readLines(path.join(__dirname, "input.txt"));
 const difference = reconcileLocationIdLists(lines);
 console.log(difference);

@@ -11,7 +11,9 @@ export const readLines = async (filePath: string): Promise<string[]> => {
 
     const lines: string[] = [];
     for await (const line of rl) {
-        lines.push(line);
+        if (line !== "") {
+            lines.push(line);
+        }
     }
 
     return lines;
