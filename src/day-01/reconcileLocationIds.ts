@@ -1,6 +1,6 @@
 import { numberComparer } from "../utilities/sorting";
 
-export const reconcileLocationIdLists = (left: number[], right: number[]): number => {
+export const reconcileLocationIds = (left: number[], right: number[]): number => {
     const leftSorted = left.toSorted(numberComparer);
     const rightSorted = right.toSorted(numberComparer);
 
